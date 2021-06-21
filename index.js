@@ -128,6 +128,15 @@ app.get('/getSeller', (req, res) => {
 }) 
 
 
+//DB for deleting service
+app.delete('/deleteService/:id',(req,res)=>{
+  const id=ObjectID(req.params.id);
+ //  console.log("dlt ",id);
+ SellerProductCollection.findOneAndDelete({_id: id})
+  .then(documents=> res.send(!!documents.value))
+})
+
+
 //Db for getting sellerAdmin Listen
 app.get('/getAdminList', (req, res) => {
 
