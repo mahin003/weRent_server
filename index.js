@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyparser.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World! this is working')
 })
 
 
@@ -43,7 +43,7 @@ client.connect(err => {
       })
   })
   //Db to get services
-  app.get('/addServices', (req, res) => {
+  app.get('/addservices', (req, res) => {
 
     SellerProductCollection.find().toArray((err, items) => {
       console.log("Error ", err)
