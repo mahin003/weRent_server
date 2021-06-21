@@ -43,7 +43,7 @@ client.connect(err => {
       })
   })
   //Db to get services
-  app.get('/addservices', (req, res) => {
+  app.get('/getServices', (req, res) => {
 
     SellerProductCollection.find().toArray((err, items) => {
       console.log("Error ", err)
