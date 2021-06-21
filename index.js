@@ -7,6 +7,7 @@ const cors = require('cors');
 const bodyparser = require('body-parser');
 require('dotenv').config();
 const ObjectID = require('mongodb').ObjectID
+
 const port = process.env.PORT || 5000;
 console.log(process.env.DB_USER);
 
@@ -22,7 +23,7 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 console.log(uri)
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
-
+  console.log("error ", err)
   const SellerProductCollection = client.db("Bariwala").collection("sellerProductInfo");
   const UserCollection = client.db("Bariwala").collection("UserRegistration");
   const AdminCollection = client.db("Bariwala").collection("AdminRegistration");
